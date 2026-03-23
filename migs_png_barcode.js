@@ -37,12 +37,12 @@ export default {
         headers: { 'Content-Type': 'image/png' },
       });
     } catch (err) {
-      // Optional: log error using console.error
-      console.error('Error generating barcode:', err);
-      return new Response('Error generating barcode', {
-        status: 500,
-        headers: { 'Content-Type': 'text/plain' },
-      });
-    }
+  console.error('Error generating barcode:', err);
+  return new Response('Error generating barcode: ' + (err.message || err), {
+    status: 500,
+    headers: { 'Content-Type': 'text/plain' },
+  });
+}
+
   },
 };
