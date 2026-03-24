@@ -34,7 +34,7 @@ export default {
       const resp = await fetch(upstreamUrl);
 
       if (!resp.ok) {
-        return new Response('Error generating barcode', {
+        return new Response('Upstream error: ' + resp.status + ' ' + resp.statusText, {
           status: 500,
           headers: { 'Content-Type': 'text/plain' }
         });
