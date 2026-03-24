@@ -1,5 +1,3 @@
--- Update after creating new worker to convert --
-
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
