@@ -1,3 +1,5 @@
+-- Update after creating new worker to convert --
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -21,7 +23,7 @@ export default {
 
     try {
       // Forward to barcode-png-app
-      const upstreamUrl = new URL('https://barcode-png-app.your-account.workers.dev/');
+      const upstreamUrl = new URL('https://barcode-png-app.dahamilton.workers.dev/');
       upstreamUrl.searchParams.set('id', id);
 
       const resp = await fetch(upstreamUrl);
